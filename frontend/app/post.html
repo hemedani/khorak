@@ -1,0 +1,16 @@
+<div class="col-md-8 col-md-offset-2">
+	<div class="well clearfix">
+		<div class="form-group">
+			<textarea rows="4" class="form-control" ng-model="post.peygham" placeholder="peyghameto binivis"></textarea>
+		</div>
+		<p class="input-group">
+			<input type="text" class="form-control" ng-model="post.roz" datepicker-popup is-open="post.opened" min-date="post.minDate">
+			<span class="input-group-btn">
+				<button class="btn btn-default" ng-click="post.open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+			</span>
+		</p>
+		<timepicker ng-model="post.zaman"></timepicker>
+		<button class="btn btn-default pull-right" ng-disabled="!post.roz" ng-click="post.zakhire()">Zakhireh</button>
+		<button class="btn btn-danger pull-right" ng-show="post.darVirayesh" ng-click="post.pak()">pakBshe?</button>
+	</div>
+</div>

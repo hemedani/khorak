@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sellam</title>
+
+	<!-- inject:css -->
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="mian.css">
+	<!-- endinject -->
+	<!-- vendorInject:css -->
+	<link rel="stylesheet" href="vendor/angular-toastr.css">
+	<!-- endinject -->
+
+</head>
+
+<body ng-controller="Vorod as amir">
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<button ng-show="amir.taeidShode()" class="btn btn-info navbar-btn" ui-sref="postha">Post Ha</button>
+			<button ng-show="amir.taeidShode()" class="btn btn-primary navbar-btn" ui-sref="post">Post Jadid</button>
+
+			<button class="btn btn-default navbar-btn pull-right" ng-show="amir.taeidShode()" ng-click="amir.khoroj()">Khoroj</button>
+		</div>
+	</nav>
+	<div class="container">
+		<dv ng-hide="amir.taeidShode()" class="col-sm-8 col-md-6 col-md-offset-3 col-sm-offset-2">
+			<div class="jumbotron clearfix">
+				<img height="200" width="200" src="https://g.twimg.com/Twitter_logo_blue.png" class="img-responsive"></img>
+				<h1>Ye post besazid</h1>
+				<p>... ya 2 ta besazin.</p>
+				<button class="btn btn-primary btn-lg pull-right" ng-click="amir.vorod()">Vorod</button>
+			</div>
+		</dv>
+		<div ng-if="amir.taeidShode()"  ui-view></div>
+
+	</div>
+	<!-- vendorInject:js -->
+	<script src="vendor/angular.js"></script>
+	<script src="vendor/satellizer.js"></script>
+	<script src="vendor/ui-bootstrap-tpls.js"></script>
+	<script src="vendor/angular-ui-router.js"></script>
+	<script src="vendor/angular-toastr.tpls.js"></script>
+	<script src="vendor/angular-animate.js"></script>
+	<!-- endinject -->
+
+	<!-- inject:js -->
+	<script src="app.js"></script>
+	<script src="post.js"></script>
+	<script src="posthayMan.js"></script>
+	<script src="vorod.js"></script>
+	<!-- endinject -->
+</body>
+
+</html>

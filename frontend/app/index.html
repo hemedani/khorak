@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sellam</title>
+
+	<!-- inject:css -->
+	<!-- endinject -->
+	<!-- vendorInject:css -->
+	<!-- endinject -->
+
+</head>
+
+<body ng-controller="Vorod as amir">
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<button ng-show="amir.taeidShode()" class="btn btn-info navbar-btn" ui-sref="postha">Post Ha</button>
+			<button ng-show="amir.taeidShode()" class="btn btn-primary navbar-btn" ui-sref="post">Post Jadid</button>
+
+			<button class="btn btn-default navbar-btn pull-right" ng-show="amir.taeidShode()" ng-click="amir.khoroj()">Khoroj</button>
+		</div>
+	</nav>
+	<div class="container">
+		<dv ng-hide="amir.taeidShode()" class="col-sm-8 col-md-6 col-md-offset-3 col-sm-offset-2">
+			<div class="jumbotron clearfix">
+				<img height="200" width="200" src="https://g.twimg.com/Twitter_logo_blue.png" class="img-responsive"></img>
+				<h1>Ye post besazid</h1>
+				<p>... ya 2 ta besazin.</p>
+				<button class="btn btn-primary btn-lg pull-right" ng-click="amir.vorod()">Vorod</button>
+			</div>
+		</dv>
+		<div ng-if="amir.taeidShode()"  ui-view></div>
+
+	</div>
+	<!-- vendorInject:js -->
+	<!-- endinject -->
+
+	<!-- inject:js -->
+	<!-- endinject -->
+</body>
+
+</html>
